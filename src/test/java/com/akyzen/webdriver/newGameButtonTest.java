@@ -18,9 +18,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  *
  * @author midalias
  */
-public class newGameButton {
+public class newGameButtonTest {
     
-    public newGameButton() {
+    public newGameButtonTest() {
     }
 
     // TODO add test methods here.
@@ -32,7 +32,7 @@ public class newGameButton {
     @Test
     public void newGameButtonClicTest() {
         WebDriver driver = new FirefoxDriver();
-        driver.navigate().to("http://54.69.10.130:8080/game-of-life/");
+        driver.navigate().to("http://52.89.251.149:8080/game-of-life/");
             
         WebElement newGameButton = driver.findElement(By.linkText("New Game"));
         newGameButton.click();
@@ -42,6 +42,6 @@ public class newGameButton {
         String strElementText  = element.getText();
         Assert.assertEquals(strExpectedText, strElementText);
         
-        driver.close();        
+        driver.close();  
     }    
 }

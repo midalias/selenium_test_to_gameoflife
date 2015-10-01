@@ -32,7 +32,7 @@ public class titleTest {
     @Test
     public void titleNameTest() {
         WebDriver driver = new FirefoxDriver();
-        driver.navigate().to("http://54.69.10.130:8080/game-of-life/");
+        driver.navigate().to("http://52.89.251.149:8080/game-of-life/");
 
         Assert.assertTrue("title should start differently", 
                                                 driver.getTitle().startsWith("The Game Of Life"));
