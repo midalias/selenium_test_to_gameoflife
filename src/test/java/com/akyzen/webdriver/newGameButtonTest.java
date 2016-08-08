@@ -12,7 +12,8 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  *
@@ -31,17 +32,21 @@ public class newGameButtonTest {
     
     @Test
     public void newGameButtonClicTest() {
-        WebDriver driver = new FirefoxDriver();
-        driver.navigate().to("http://52.71.221.84:8080/game-of-life/"); //http://52.71.221.84:8080/game-of-life/
+        //WebDriver driver = new FirefoxDriver();
+        HtmlUnitDriver unitDriver = new HtmlUnitDriver();
+        unitDriver.navigate().to("http://52.71.221.84:8080/game-of-life");
             
-        WebElement newGameButton = driver.findElement(By.linkText("New Game"));
+        WebElement newGameButton = unitDriver.findElement(By.linkText("New Game"));
         newGameButton.click();
         
         String strExpectedText = "Please seed your universe";
-        WebElement element = driver.findElement(By.id("seedUniverseDiv"));
+        
+        
+        WebElement element = unitDriver.findElement(By.id("seedUniverseDiv"));
         String strElementText  = element.getText();
+        System.out.println("Instructions are: " + element.getText());
         Assert.assertEquals(strExpectedText, strElementText);
         
-        driver.close();  
+        unitDriver.close();  
     }    
 }
