@@ -20,7 +20,7 @@ public class titleTest {
     public void titleNameTest() {
         // Declaring and initialising the HtmlUnitWebDriver
         HtmlUnitDriver unitDriver = new HtmlUnitDriver();
-        unitDriver.navigate().to("http://52.71.221.84:8080/game-of-life/");
+        unitDriver.navigate().to("http://54.159.235.123:8080/game-of-life/");
         
         Assert.assertTrue("title should start differently", 
                                                 unitDriver.getTitle().startsWith("The Game Of Life"));
